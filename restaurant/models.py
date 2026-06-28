@@ -2,12 +2,12 @@
 from django.db import models
 
 class Menu(models.Model):
-    title = models.CharField(max_length=200)
+    title = models.CharField(max_length=255)
     price = models.DecimalField(max_digits=6, decimal_places=2)
-    inventory = models.IntegerField()
+    inventory = models.SmallIntegerField()
 
     def __str__(self):
-        return self.title
+        return f'{self.title} : {self.price}'
 
 
 class Booking(models.Model):
